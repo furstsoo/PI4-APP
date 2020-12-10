@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.project.activity.EncomendasActivity">
+
+  <ScrollView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:orientation="vertical">
+      <TableLayout
+              android:layout_width="fill_parent"
+              android:layout_height="250dp" android:id="@+id/layoutCadastrar"
+      >
+        <TextView
+                android:text="Cadastrar Encomenda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/txtCadastrar"
+                android:layout_gravity="center_horizontal"
+                android:textAlignment="center"
+                tools:layout_editor_absoluteY="370dp" android:textStyle="bold"/>
+
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+          <TextView
+                  android:text="Destinatário:"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content" android:id="@+id/lblAddressee"/>
+          <EditText
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:inputType="textPersonName"
+                  android:text=""
+                  android:ems="10"
+                  android:id="@+id/txtAddressee"/>
+        </TableRow>
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+          <TextView
+                  android:text="Apartamento:"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content" android:id="@+id/lblApartment"/>
+          <EditText
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:inputType="textPersonName"
+                  android:text=""
+                  android:ems="10"
+                  android:id="@+id/txtApartment"/>
+        </TableRow>
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+          <TextView
+                  android:text="Bloco:"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content" android:id="@+id/lblBlock"/>
+          <EditText
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:inputType="textPersonName"
+                  android:text=""
+                  android:ems="10"
+                  android:id="@+id/txtBlock"/>
+        </TableRow>
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+
+          <Button
+                  android:text="Cadastrar"
+                  android:layout_width="match_parent" android:layout_gravity="center_horizontal"
+                  android:layout_weight="1"
+                  android:layout_margin="5dp"
+                  android:layout_height="match_parent" android:id="@+id/btnCadastrar"/>
+        </TableRow>
+      </TableLayout>
+      <TableLayout
+              android:layout_width="fill_parent"
+              android:layout_height="550dp"
+              android:id="@+id/layoutPesquisar">
+        <TextView
+                android:text="Pesquisar Encomenda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/txtPesquisar"
+                android:layout_gravity="center_horizontal"
+                android:textAlignment="center"
+                tools:layout_editor_absoluteY="370dp" android:textStyle="bold"/>
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent" android:id="@+id/trowBlock">
+          <TextView
+                  android:text="Bloco:"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content" android:id="@+id/lblBlockPesq"/>
+          <EditText
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:inputType="textPersonName"
+                  android:ems="10"
+                  android:id="@+id/txtBlockPesq"/>
+        </TableRow>
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+                  android:id="@+id/trowApartment">
+          <TextView
+                  android:text="Apartamento:"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content" android:id="@+id/lblApartmentPesq"/>
+          <EditText
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:inputType="textPersonName"
+                  android:ems="10"
+                  android:id="@+id/txtApartmentPesq"/>
+        </TableRow>
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent" android:id="@+id/trowNome">
+          <TextView
+                  android:text="Condômino:"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content" android:id="@+id/lblAddresseePesq"/>
+          <EditText
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:inputType="textPersonName"
+                  android:ems="10"
+                  android:id="@+id/txtAddresseePesq"/>
+        </TableRow>
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+          <Button
+                  android:text="Pesquisar"
+                  android:layout_width="match_parent" android:layout_gravity="center_horizontal"
+                  android:layout_weight="1"
+                  android:layout_margin="5dp"
+                  android:layout_height="match_parent" android:id="@+id/btnPesquisar"/>
+        </TableRow>
+        <ListView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" android:id="@+id/listView"/>
+      </TableLayout>
+    </LinearLayout>
+  </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
