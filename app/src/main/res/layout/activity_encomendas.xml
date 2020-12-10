@@ -14,7 +14,7 @@
                   android:orientation="vertical">
       <TableLayout
               android:layout_width="fill_parent"
-              android:layout_height="250dp" android:id="@+id/layoutCadastrar"
+              android:layout_height="350dp" android:id="@+id/layoutCadastrar"
       >
         <TextView
                 android:text="Cadastrar Encomenda"
@@ -62,6 +62,32 @@
                   android:text=""
                   android:ems="10"
                   android:id="@+id/txtBlock"/>
+        </TableRow>
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+          <TextView
+                  android:text="Remetente:"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content" android:id="@+id/lblRemetente"/>
+          <EditText
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:inputType="textPersonName"
+                  android:text=""
+                  android:ems="10"
+                  android:id="@+id/txtRemetente"/>
+        </TableRow>
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+          <TextView
+                  android:text="Descrição:"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content" android:id="@+id/lblDescicao"/>
+          <EditText
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:inputType="textPersonName"
+                  android:text=""
+                  android:ems="10"
+                  android:id="@+id/txtDescricao"/>
         </TableRow>
         <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
 

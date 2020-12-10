@@ -13,10 +13,10 @@ import java.net.ProtocolException;
 import java.net.URL;
 import java.util.Scanner;
 
-public class HttpServiceCadastrarUser extends AsyncTask<User, Void, Retorno> {
+public class HttpServiceCadastrarUser extends AsyncTask<User, Void, User> {
 
     @Override
-    protected Retorno doInBackground(User... users) {
+    protected User doInBackground(User... users) {
         Gson gson = new Gson();
 
         StringBuilder resposta = new StringBuilder();
@@ -54,6 +54,6 @@ public class HttpServiceCadastrarUser extends AsyncTask<User, Void, Retorno> {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return new Gson().fromJson(resposta.toString(), Retorno.class);
+        return new Gson().fromJson(resposta.toString(), User.class);
     }
 }

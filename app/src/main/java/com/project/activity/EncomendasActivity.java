@@ -21,7 +21,7 @@ import java.util.concurrent.ExecutionException;
 
 public class EncomendasActivity extends AppCompatActivity {
     private Button btnCadastrar, btnPesquisar;
-    private EditText txtAddressee, txtApartment, txtBlock, txtBlockPesq, txtAddresseePesq, txtApartmentPesq;
+    private EditText txtAddressee, txtApartment, txtBlock, txtBlockPesq, txtAddresseePesq, txtApartmentPesq, txtRemetente, txtDescricao;
     ListView listview;
     List<Map<String, String>> data;
     SimpleAdapter adapter;
@@ -41,6 +41,8 @@ public class EncomendasActivity extends AppCompatActivity {
         txtAddressee = (EditText) findViewById(R.id.txtAddressee);
         txtApartment = (EditText) findViewById(R.id.txtApartment);
         txtBlock = (EditText) findViewById(R.id.txtBlock);
+        txtRemetente = findViewById(R.id.txtRemetente);
+        txtDescricao = findViewById(R.id.txtDescricao);
         txtAddresseePesq = (EditText) findViewById(R.id.txtAddresseePesq);
         txtApartmentPesq = (EditText) findViewById(R.id.txtApartmentPesq);
         txtBlockPesq = (EditText) findViewById(R.id.txtBlockPesq);
@@ -124,7 +126,7 @@ public class EncomendasActivity extends AppCompatActivity {
                 if (globalUser.getTypeUser().equals("C")) {
                     order = new Order(globalUser.getName(), "A", globalUser.getApartment(), globalUser.getBlock(), getDateNow(), globalUser.getId());
                 } else {
-                    order = new Order(txtAddressee.getText().toString(), "A", txtApartment.getText().toString(), txtBlock.getText().toString(), getDateNow(), globalUser.getId());
+                    order = new Order(txtAddressee.getText().toString(), "A", txtApartment.getText().toString(), txtBlock.getText().toString(), getDateNow(),globalUser.getId(), txtRemetente.getText().toString(), txtDescricao.getText().toString());
                 }
 
                 Retorno retorno = cadastrar(order);
@@ -197,6 +199,8 @@ public class EncomendasActivity extends AppCompatActivity {
         txtAddressee.setText("");
         txtApartment.setText("");
         txtBlock.setText("");
+        txtDescricao.setText("");
+        txtRemetente.setText("");
     }
 
     public static String getDateNow() {

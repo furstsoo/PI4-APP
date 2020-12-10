@@ -11,7 +11,7 @@ import com.project.entity.GlobalUser;
 import com.project.entity.R;
 
 public class MenuActivity extends AppCompatActivity {
-    private Button encomendas, salaoFestas, avisos;
+    private Button encomendas, salaoFestas, avisos, sair;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +25,7 @@ public class MenuActivity extends AppCompatActivity {
         encomendas = findViewById(R.id.btnOrder);
         salaoFestas = findViewById(R.id.btnSalao);
         avisos = findViewById(R.id.btnAvisos);
+        sair = findViewById(R.id.btnSair);
 
         if (!globalUser.getTypeUser().equals("C")) {
             salaoFestas.setVisibility(View.GONE);
@@ -57,6 +58,21 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                     Intent intent = new Intent(MenuActivity.this, AvisosActivity.class);
                     startActivity(intent);
+            }
+        });
+
+        sair.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final GlobalUser globalUser = (GlobalUser) getApplicationContext();
+                globalUser.setId(0);
+                globalUser.setName(null);
+                globalUser.setEmail(null);
+                globalUser.setApartment(null);
+                globalUser.setBlock(null);
+                globalUser.setTypeUser(null);
+                Intent intent = new Intent(MenuActivity.this, MainActivity.class);
+                startActivity(intent);
             }
         });
     }

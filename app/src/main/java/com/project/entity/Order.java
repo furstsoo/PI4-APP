@@ -64,6 +64,17 @@ public class Order {
         this.cd_user = cd_user;
     }
 
+    public Order(String addressee, String status, String apartment, String block, String dt_delivery, int cd_user, String remetente, String descricao) {
+        this.addressee = addressee;
+        this.status = status;
+        this.apartment = apartment;
+        this.block = block;
+        this.dt_delivery = dt_delivery;
+        this.cd_user = cd_user;
+        this.remetente = remetente;
+        this.descricao = descricao;
+    }
+
     public int getId_order() {
         return id_order;
     }

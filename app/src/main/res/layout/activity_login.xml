@@ -6,41 +6,46 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="com.project.activity.LoginActivity">
-  <TextView
-          android:text="EMAIL"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content" android:id="@+id/labelLogin"
-          app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="232dp"/>
-  <TextView
-          android:text="SENHA"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content" android:id="@+id/labelSenha"
-          app:layout_constraintTop_toBottomOf="@+id/txEmail"
-          android:layout_marginTop="40dp" app:layout_constraintEnd_toEndOf="@+id/txEmail"
-          app:layout_constraintStart_toStartOf="@+id/txEmail"/>
-  <EditText
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:inputType="textEmailAddress"
-          android:ems="10"
-          android:id="@+id/txEmail"
-          app:layout_constraintEnd_toEndOf="@+id/labelLogin" app:layout_constraintStart_toStartOf="@+id/labelLogin"
-          app:layout_constraintTop_toBottomOf="@+id/labelLogin" android:layout_marginTop="64dp"/>
-  <EditText
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:inputType="textPassword"
-          android:ems="10"
-          android:id="@+id/txSenha"
-          app:layout_constraintTop_toBottomOf="@+id/labelSenha"
-          app:layout_constraintEnd_toEndOf="@+id/labelSenha" app:layout_constraintStart_toStartOf="@+id/labelSenha"
-          android:layout_marginTop="56dp"/>
-  <Button
-          android:text="Logar"
-          android:layout_width="178dp"
-          android:layout_height="55dp" android:id="@+id/btnLogin"
-          app:layout_constraintTop_toBottomOf="@+id/txSenha" app:layout_constraintEnd_toEndOf="@+id/txSenha"
-          app:layout_constraintStart_toStartOf="@+id/txSenha" app:layout_constraintBottom_toBottomOf="parent"
-          app:layout_constraintHorizontal_bias="0.496" app:layout_constraintVertical_bias="0.484"/>
+  <LinearLayout android:layout_width="match_parent" android:layout_height="fill_parent"
+                android:orientation="vertical" tools:ignore="MissingConstraints">
+    <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent" android:id="@+id/layoutLogin">
+      <TableRow android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="150dp">
+        <TextView
+                android:text="Email:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/lbleEmail"/>
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:text=""
+                android:ems="10"
+                android:id="@+id/txEmail"/>
+      </TableRow>
+      <TableRow android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="50dp">
+        <TextView
+                android:text="Email:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/lbleSenha"/>
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:text=""
+                android:ems="10"
+                android:id="@+id/txSenha"/>
+      </TableRow>
+      <TableRow android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="50dp">
+
+        <Button
+                android:text="Logar"
+                android:layout_width="match_parent" android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:layout_height="match_parent" android:id="@+id/btnLogin"/>
+      </TableRow>
+    </TableLayout>
+  </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

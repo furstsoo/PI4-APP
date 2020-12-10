@@ -7,6 +7,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import com.project.entity.GlobalUser;
 import com.project.entity.R;
 import com.project.entity.Retorno;
 import com.project.entity.User;
@@ -29,7 +30,7 @@ public class CadastroActivity extends AppCompatActivity {
         senha = findViewById(R.id.txSenha);
         apto = findViewById(R.id.txApart);
         bl = findViewById(R.id.txBloco);
-        btnCad = findViewById(R.id.btnCadastrar);
+        btnCad = findViewById(R.id.btnCadastro);
 
         listenerButtonCadastro();
 
@@ -42,9 +43,18 @@ public class CadastroActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 User us = criaEntidade(nome, email, senha, apto, bl);
-                Retorno retorno = insereUsuario(us);
+                us = insereUsuario(us);
 
-                if (retorno.getId() == 201) {
+                if (us != null) {
+                    final GlobalUser globalUser = (GlobalUser) getApplicationContext();
+                    globalUser.setId(us.getId());
+                    globalUser.setName(us.getName());
+                    globalUser.setEmail(us.getEmail());
+                    globalUser.setApartment(us.getApartment());
+                    globalUser.setBlock(us.getBlock());
+                    globalUser.setTypeUser(us.getTypeUser());
+
+
                     Intent intentCad = new Intent(CadastroActivity.this, MenuActivity.class);
                     startActivity(intentCad);
                 } else {
@@ -56,9 +66,9 @@ public class CadastroActivity extends AppCompatActivity {
         });
     }
 
-    private Retorno insereUsuario(User u) {
+    private User insereUsuario(User u) {
         try {
-            Retorno rs = new HttpServiceCadastrarUser().execute(u).get();
+            User rs = new HttpServiceCadastrarUser().execute(u).get();
             return rs;
         } catch (ExecutionException e) {
             e.printStackTrace();
